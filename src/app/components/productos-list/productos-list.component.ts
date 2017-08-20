@@ -23,8 +23,7 @@ export class ProductosListComponent implements OnInit {
   ngOnInit() {
     console.log("Lista de productos cargados");
     this._productoService.getProducts().subscribe(
-      result => {
-        
+      result => {        
         if(result.code != 200){
           console.log(result)
         }else{
