@@ -10,12 +10,14 @@ export class ProductosService {
 
   public url:string;
   //constructor() { 
-  constructor(public _http:Http) { 
+  constructor(
+    public _http: Http
+  ) { 
     this.url  = GLOBAL.url+"product/all";
     console.log("mi url "+this.url);
    }
   getProducts(){
-    return "Servicio products";
-    //return this._http.get(this.url).map(res => res.json() );
+    //return "Servicio products";
+    return this._http.get(this.url).map(res => res.json() );
   }
 }

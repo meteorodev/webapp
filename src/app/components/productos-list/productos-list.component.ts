@@ -6,13 +6,14 @@ import { Producto } from '../../models/producto'
   selector: 'app-productos-list',
   templateUrl: './productos-list.component.html',
   styleUrls: ['./productos-list.component.css'],
-  providers:[ProductosService]
+  providers: [ProductosService]
 })
 export class ProductosListComponent implements OnInit {
   public titulo:string;
+  public productos:Producto[];
   constructor(
-    private _route:ActivatedRoute,
-    private _router:Router,
+    private _route: ActivatedRoute,
+    private _router: Router,
     private _productoService: ProductosService
   ) { 
     this.titulo="listado de productos";
@@ -21,15 +22,19 @@ export class ProductosListComponent implements OnInit {
 
   ngOnInit() {
     console.log("Lista de productos cargados");
-    alert(this._productoService.getProducts());
-    /*this._productoService.getProducts().subscribe(
+    this._productoService.getProducts().subscribe(
       result => {
-        console.log(result);
+        
+        if(result.code != 200){
+          console.log(result)
+        }else{
+          this.productos = result.data;
+        }
       },
       error => {
         console.log(<any> error);
       }
-    );*/
+    );
   }
 
 }
