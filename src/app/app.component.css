@@ -43,11 +43,12 @@
     transition: all 300ms;
 }
 #nav ul li a:hover{
-    text-decoration: none;
-    background: lime;
+    text-decoration: none ;
+    background: #16C516;
     border-radius: 5px;
     color: black;
 }
+
 #main{
     padding: 50px;
     margin-top: 30px;

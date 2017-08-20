@@ -6,12 +6,14 @@ import { HomeComponent } from './components/home/home.component';
 
 //rutas 
 import {routing,appRoutingProviders } from './app.routing';
-import { ErrorComponent } from './components/error/error.component'
+import { ErrorComponent } from './components/error/error.component';
+import { ProductosListComponent } from './components/productos-list/productos-list.component'
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    ErrorComponent
+    ErrorComponent,
+    ProductosListComponent
   ],
   imports: [
     BrowserModule,
