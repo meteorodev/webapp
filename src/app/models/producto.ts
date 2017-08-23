@@ -5,9 +5,7 @@ export class Producto {
         public descripcion:string,
         public precio:number,
         public imagen:string
-    ){
-
-    }
+    ){}
 
     toString(){
         return "id: "+this.id+" nombre: "+this.nombre+" descripcion: "+this.descripcion+

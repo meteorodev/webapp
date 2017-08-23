@@ -1,13 +1,12 @@
 <h3> {{titulo}} </h3>
-{{productos}}
-<div *ngIf="!productos" >
-    <h2>Cargando lista de productos ....</h2>
+<div *ngIf="!productos">
+    Cargando lista de productos....
 </div>
-<div *ngIf="productos" >
+<div *ngIf="productos">
     <ul>
         <li *ngFor="let product of productos" >
-            <strong>{{product.nombre}}</strong>
-            <p>{{product.precio}}</p>
+            <p><strong>{{product.nombre}}</strong> {{product.precio}}</p>
+            
         </li>
     </ul>
 </div>
