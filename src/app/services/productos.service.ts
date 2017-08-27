@@ -13,11 +13,21 @@ export class ProductosService {
   constructor(
     public _http: Http
   ) { 
-    this.url  = GLOBAL.url+"product/all";
+    this.url  = GLOBAL.url;
     console.log("mi url "+this.url);
    }
   getProducts(){
     //return "Servicio products";
-    return this._http.get(this.url).map(res => res.json());
+    return this._http.get(this.url+"product/all").map(res => res.json());
+  }
+  addProduct(producto:Producto){
+    let json = JSON.stringify(producto);
+    let params = 'json'+json;// this no use in spring boot
+    //let headers = new Headers({'Content-Type':'application/x-www-form-urlcoded'});
+    let headers1 = new Headers({'Content-Type':'application/json'});
+    /*return this._http.post(this.url+"product/prod",params,{headers: headers})
+            .map(res => res.json );*/
+    return this._http.post(this.url+"product/prod",JSON.stringify(producto),{headers: headers1})
+            .map(res => res.json );
   }
 }
