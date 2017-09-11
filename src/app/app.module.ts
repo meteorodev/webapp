@@ -11,14 +11,16 @@ import { HomeComponent } from './components/home/home.component';
 import {routing,appRoutingProviders } from './app.routing';
 import { ErrorComponent } from './components/error/error.component';
 import { ProductosListComponent } from './components/productos-list/productos-list.component';
-import { ProductNewComponent } from './components/product-new/product-new.component'
+import { ProductNewComponent } from './components/product-new/product-new.component';
+import { ProDetComponent } from './components/pro-det/pro-det.component'
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     ErrorComponent,
     ProductosListComponent,
-    ProductNewComponent
+    ProductNewComponent,
+    ProDetComponent
   ],
   imports: [
     BrowserModule,
