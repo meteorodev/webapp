@@ -1,0 +1,14 @@
+.imagen_continer{
+    width: 100%;
+    overflow: hidden;
+}
+.img_def{
+    max-height: 200px;
+    background: #cccccc;
+    margin: 0px auto;
+    display: block;
+}
+.img_pro{
+    max-height: 200px;
+    background: #cccccc;
+}

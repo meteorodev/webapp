@@ -3,10 +3,29 @@
     Cargando lista de productos....
 </div>
 <div *ngIf="productos">
-    <ul>
+    <!--ul>
         <li *ngFor="let product of productos" >
             <p><strong>{{product.nombre}}</strong> {{product.descripcion}} {{product.precio}}</p>
             
         </li>
-    </ul>
+    </ul-->
+    <div class="row">
+        <div class="col-lg-4" *ngFor="let pro of productos">
+            <div *ngIf="pro.imagen" class="imagen_continer">
+                <img src="..." class="img_pro"/>
+            </div>
+            <div *ngIf="!pro.imagen" class="imagen_continer">
+                    <img src="../../../assets/img/images.jpg" class="img_def"/>
+                </div>
+            <div class="caption">
+               <h3>{{pro.nombre}}</h3> 
+               <p> $ {{pro.precio}}</p>
+               <p>
+                   <a href="#" class="btn btn-xs btn-primary">Ver</a>
+                   <a href="#" class="btn btn-xs btn-warning">Editar</a>
+                   <a href="#" class="btn btn-xs btn-danger">Borrar</a>
+               </p>
+            </div>
+        </div>
+    </div>
 </div>

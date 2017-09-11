@@ -16,7 +16,7 @@ export class ProductosListComponent implements OnInit {
     private _router: Router,
     private _productoService: ProductosService
   ) { 
-    this.titulo="listado de productos";
+    this.titulo="Listado de productos";
    // this.productos[0]=new Producto(4,"camarones apanados","camarones fritos con arina",5.5,"imagen.png");
   }
 
