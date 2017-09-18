@@ -1,3 +1,11 @@
-<p>
-  pro-det works!
-</p>
+<div *ngIf="product">
+  <h2>{{product.nombre}}</h2>
+    <div *ngIf="product.imagen" class="imagen_continer">
+      <img src="..." class="img_pro"/>
+    </div>
+    <div *ngIf="!product.imagen" class="imagen_continer">
+          <img src="../../../assets/img/images.jpg" class="img_def"/>
+    </div>
+    <p>{{product.descripcion}} : {{product.precio}} USD.</p>
+  
+</div>

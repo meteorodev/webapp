@@ -20,6 +20,21 @@ export class ProDetComponent implements OnInit {
 
   ngOnInit() {
     console.log("componente detalle cargado correctamente");
+    this.getProd();
   }
 
+  getProd(){
+    this._route.params.forEach((params:Params)=>{
+      let id = params['id'];
+      this._productoService.getProduct(id).subscribe(
+        response => {
+          console.log(response)
+          this.product = response;
+        },
+        error => {
+          console.log(<any> error)
+        }
+      );
+    });
+  }
 }

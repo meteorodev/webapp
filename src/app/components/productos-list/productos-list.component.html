@@ -21,8 +21,8 @@
                <h3>{{pro.nombre}}</h3> 
                <p> $ {{pro.precio}}</p>
                <p>
-                   <a href="#" class="btn btn-xs btn-primary">Ver</a>
-                   <a href="#" class="btn btn-xs btn-warning">Editar</a>
+                   <a [routerLink]="['/detalle',pro.id]" class="btn btn-xs btn-primary">Ver</a>
+                   <a [routerLink]="['/editar',pro.id]" class="btn btn-xs btn-warning">Editar</a>
                    <a href="#" class="btn btn-xs btn-danger">Borrar</a>
                </p>
             </div>

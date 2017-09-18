@@ -30,7 +30,8 @@ export class ProductosListComponent implements OnInit {
           console.log(result.code);         
         }else{*/
           this.productos = result;
-          console.log("else result");
+          console.log("result")
+          console.log(result); 
         //}
       },
       error => {

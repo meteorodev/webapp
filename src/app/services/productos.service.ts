@@ -20,6 +20,10 @@ export class ProductosService {
     //return "Servicio products";
     return this._http.get(this.url+"product/all").map(res => res.json());
   }
+  getProduct(id){
+    return this._http.get(this.url+"product/get/"+id).map(res => res.json());
+  }
+
   addProduct(producto:Producto){
     let json = JSON.stringify(producto);
     let params = 'json'+json;// this no use in spring boot
