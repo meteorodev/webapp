@@ -12,7 +12,7 @@
     <div class="row">
         <div class="col-lg-4" *ngFor="let pro of productos">
             <div *ngIf="pro.imagen" class="imagen_continer">
-                <img src="..." class="img_pro"/>
+                <img src="{{pro.imagen}}" class="img_pro"/>
             </div>
             <div *ngIf="!pro.imagen" class="imagen_continer">
                     <img src="../../../assets/img/images.jpg" class="img_def"/>

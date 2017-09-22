@@ -12,6 +12,7 @@ import { Producto } from '../../models/producto';
 export class ProeditComponent implements OnInit {
   public titulo;
   public producto:Producto;
+  public isEdit;
 
   constructor(
     private _productoService:ProductosService,
@@ -19,10 +20,27 @@ export class ProeditComponent implements OnInit {
     private _route:ActivatedRoute
   ) {
     this.titulo = "Editar producto";
-    this.producto = new Producto(1,"","",0,"");
+    this.producto = new Producto(1,"vacio","vacio",0,"vacio");
+    this.isEdit = true;
    }
 
   ngOnInit() {
+    this.getProd();
+    console.log(this.producto);
+  }
+  getProd(){
+    this._route.params.forEach((params:Params)=>{
+      let id = params['id'];
+      this._productoService.getProduct(id).subscribe(
+        response => {
+          console.log(response)
+          this.producto = response;
+        },
+        error => {
+          console.log(<any> error)
+        }
+      );
+    });
   }
 
 }
